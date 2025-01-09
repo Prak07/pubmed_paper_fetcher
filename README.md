@@ -39,7 +39,7 @@ python command_line.py "your search query" [-f FILENAME] [-d]
 
 ### Examples
 
-Search for papers about machine learning and display results in console:
+Search for papers about Cancer and display results in console:
 ```bash
 python command_line.py "Cancer"
 ```
@@ -49,6 +49,10 @@ Search for COVID-19 papers and save to CSV with debug mode:
 python command_line.py "COVID-19" -f covid_papers.csv -d
 ```
 
+Command for help:
+```bash
+python command_line.py -h
+```
 ## Output Format
 
 The tool provides the following information for each paper:
