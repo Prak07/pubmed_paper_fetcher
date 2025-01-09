@@ -3,21 +3,13 @@ import csv
 import logging
 
 def identify_non_academic_authors(authors):
-    """
-    Identify non-academic authors from a list of authors with their affiliations and emails.
-
-    Args:
-        authors (list of dict): List of author dictionaries with 'name', 'affiliation', and 'email'.
-
-    Returns:
-        tuple: (non_academic_authors, company_affiliations)
-    """
+    
     non_academic_authors = []
     company_affiliations = []
 
     # Define keywords for academic and non-academic institutions
-    academic_keywords = r"(university|college|school|institute|academy|research|lab|center)"
-    non_academic_keywords = r"(pharma|biotech|corp|inc|ltd|gmbh|company)"
+    academic_keywords = ["university", "college", "school", "institute", "academy", "research", "lab", "center"]
+    non_academic_keywords = ["pharma", "biotech", "corp", "inc", "ltd", "gmbh", "company"]
     
     for author in authors:
         affiliation = author.get("affiliation", "").lower()
