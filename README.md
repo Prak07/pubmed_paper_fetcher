@@ -16,7 +16,6 @@ A Python-based command-line tool for fetching and analyzing research papers from
 1. Clone this repository:
 ```bash
 git clone https://github.com/Prak07/pubmed_paper_fetcher.git
-cd pubmed_fetcher
 ```
 
 2. Install required dependencies:
