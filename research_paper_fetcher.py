@@ -1,8 +1,6 @@
-import argparse
 import requests
 import csv
 import logging
-import re
 
 def identify_non_academic_authors(authors):
     """
@@ -27,12 +25,12 @@ def identify_non_academic_authors(authors):
         name = author.get("name", "Unknown")
 
         # Check affiliation for non-academic keywords
-        if re.search(non_academic_keywords, affiliation):
+        if any(keyword in affiliation for keyword in non_academic_keywords):
             non_academic_authors.append(name)
             company_affiliations.append(affiliation)
-        elif not re.search(academic_keywords, affiliation):
+        elif not any(keyword in affiliation for keyword in academic_keywords):
             # Use email domain as a secondary heuristic
-            if email and not re.match(r".*@.*\.edu", email):
+            if email and not email.endswith(".edu"):
                 non_academic_authors.append(name)
                 company_affiliations.append(affiliation)
 
